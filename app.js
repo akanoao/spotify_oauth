@@ -26,6 +26,10 @@ app.use(express.static('public'));
 app.use(cors());
 app.use(cookieParser());
 
+app.get('/', (req, res) => {
+  res.redirect('/login'); // Redirects to the profile page
+});
+
 // Login endpoint: directs the user to Spotify's authorization page
 app.get('/login', (req, res) => {
   const state = generateRandomString(16);
