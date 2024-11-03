@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel="stylesheet" href="/style.css"> <!-- Updated to serve from public directory -->
+    <!-- Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Spotify Stats</title>
+</head>
+<body>
+    <div class="container">
+        <div class="section" id="heading">
+            <img src="./Spotify_Primary_Logo_RGB_Green.png" alt="logo">SPOTIFY STATS
+        </div>
+        <div class="section" id="recently-played">
+            <h2>Recently Played</h2>
+            <% if (recentlyPlayed.length > 0) { %>
+                <ul>
+                <% recentlyPlayed.forEach(function(track) { %>
+                    <li><%= track.trackName %> - <%= track.artistName %></li>
+                <% }); %>
+                </ul>
+            <% } else { %>
+                <p>No recently played tracks.</p>
+            <% } %>
+        </div>
+        <div class="section" id="now-playing">
+            <h2>Now Playing</h2>
+            <% if (currentlyPlaying) { %>
+                <p><%= currentlyPlaying.trackName %> - <%= currentlyPlaying.artistName %></p>
+            <% } else { %>
+                <p>No track currently playing.</p>
+            <% } %>
+        </div>
+        <div class="section" id="top-tracks">
+            <h2>Top Tracks</h2>
+            <% if (topTracks.length > 0) { %>
+                <ul>
+                <% topTracks.forEach(function(track) { %>
+                    <li><%= track %></li>
+                <% }); %>
+                </ul>
+            <% } else { %>
+                <p>No top tracks available.</p>
+            <% } %>
+        </div>
+        <div class="section" id="top-artists">
+            <h2>Top Artists</h2>
+            <% if (topArtists.length > 0) { %>
+                <ul>
+                <% topArtists.forEach(function(artist) { %>
+                    <li><%= artist %></li>
+                <% }); %>
+                </ul>
+            <% } else { %>
+                <p>No top artists available.</p>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

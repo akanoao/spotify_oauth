@@ -1,0 +1,64 @@
+body {
+    background-color: #1e1e1e;
+}
+h2 {
+    padding: 10px;
+}
+
+.container {
+    display: grid;
+    height: 95vh;
+    width: auto;
+    grid-template-rows: 0.3fr 0.4fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    padding: 10px;
+}
+.section {
+    background-color: #2c2c2c;
+    color: white;
+    border-radius: 1%;
+}
+
+.section ul ,p { 
+    padding: 30px;
+}
+
+#heading {
+    grid-row: 1;
+    grid-column: 1/4;
+    font-family: "Montserrat", sans-serif;
+    font-size: 4rem;
+    font-weight: bold;
+    color: #1DB954;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#heading img {
+    width: 3rem;
+    height: auto;
+    padding: 10px;
+}
+
+#recently-played {
+    grid-row: 2/4;
+    grid-column: 1;
+}
+
+#now-playing {
+    grid-row: 2/3;
+    grid-column: 2/4;
+}
+
+#top-tracks {
+    grid-row: 3/4;
+    grid-column: 2/3;
+}
+
+#top-artists {
+    grid-row: 3/4;
+    grid-column: 3/4;
+}
